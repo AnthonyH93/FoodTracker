@@ -6,7 +6,6 @@
 //  Copyright © 2020 Anthony Hopkins. All rights reserved.
 //
 
-import XCTest
 @testable import FoodTracker
 
 class FoodTrackerTests: XCTestCase {

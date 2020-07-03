@@ -13,7 +13,6 @@
 		9D3A434A24AFAF670016BBE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434824AFAF670016BBE8 /* Main.storyboard */; };
 		9D3A434C24AFAF670016BBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434B24AFAF670016BBE8 /* Assets.xcassets */; };
 		9D3A434F24AFAF670016BBE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434D24AFAF670016BBE8 /* LaunchScreen.storyboard */; };
-		9D3A435A24AFAF670016BBE8 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A435924AFAF670016BBE8 /* FoodTrackerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,6 @@
 		9D3A434E24AFAF670016BBE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D3A435024AFAF670016BBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3A435524AFAF670016BBE8 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D3A435924AFAF670016BBE8 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		9D3A435B24AFAF670016BBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +91,6 @@
 		9D3A435824AFAF670016BBE8 /* FoodTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D3A435924AFAF670016BBE8 /* FoodTrackerTests.swift */,
 				9D3A435B24AFAF670016BBE8 /* Info.plist */,
 			);
 			path = FoodTrackerTests;
@@ -210,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3A435A24AFAF670016BBE8 /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
