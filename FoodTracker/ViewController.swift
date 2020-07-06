@@ -36,6 +36,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     //MARK: UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        
+        //Set image to photoImageView to display the selected image.
+        photoImageView.image = image
+
+        // print out the image size as a test
+        print(image.size)
+    }
+    /*
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         //Dismiss the picker if the user cancelled.
         dismiss(animated: true, completion: nil)
@@ -54,13 +69,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
-    
+    */
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         //Hide the keyboard in case user taps while typing in the textbox.
         nameTextField.resignFirstResponder()
         
-        //UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        /*//UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         
         //Only allow photos to be picked, not taken.
@@ -69,9 +84,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         //Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+         
+        
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+ */
     }
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
+        
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
     }
     
 
