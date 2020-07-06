@@ -41,25 +41,36 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="7Xt-CF-bgs" secondAttribute="trailing" id="8rg-aR-fmt"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-De-UiW">
-                                <rect key="frame" x="20" y="172.5" width="374" height="199.5"/>
-                                <gestureRecognizers/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zQT-fS-gio">
+                                <rect key="frame" x="7" y="172.5" width="402" height="237.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-De-UiW">
+                                        <rect key="frame" x="0.5" y="0.0" width="401" height="199.5"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tsW-De-UiW" secondAttribute="height" multiplier="400:199" id="hdQ-qW-dnG"/>
+                                            <constraint firstAttribute="height" constant="199.5" id="xmu-2W-7V2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61n-54-95W">
+                                        <rect key="frame" x="134.5" y="207.5" width="133" height="30"/>
+                                        <state key="normal" title="Choose New Image"/>
+                                        <connections>
+                                            <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixk-NY-tQX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="199.5" id="xmu-2W-7V2"/>
+                                    <constraint firstAttribute="width" secondItem="zQT-fS-gio" secondAttribute="height" multiplier="401:237" id="hCQ-ow-Nlf"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="gWA-81-UCM" appends="YES" id="ovb-le-dwz"/>
-                                </connections>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="jLS-iI-Jt9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CTI-xc-Fdr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jLS-iI-Jt9" secondAttribute="trailing" constant="20" id="Fi4-AR-szu"/>
                             <constraint firstItem="jLS-iI-Jt9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PSM-BM-AZA"/>
-                            <constraint firstItem="tsW-De-UiW" firstAttribute="top" secondItem="jLS-iI-Jt9" secondAttribute="bottom" constant="8" id="TSA-B6-aX7"/>
-                            <constraint firstItem="tsW-De-UiW" firstAttribute="trailing" secondItem="jLS-iI-Jt9" secondAttribute="trailing" id="Ykj-R3-hGE"/>
-                            <constraint firstItem="tsW-De-UiW" firstAttribute="leading" secondItem="jLS-iI-Jt9" secondAttribute="leading" id="xcE-05-0HO"/>
+                            <constraint firstItem="zQT-fS-gio" firstAttribute="top" secondItem="jLS-iI-Jt9" secondAttribute="bottom" constant="8" id="UjR-bB-kG2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -70,7 +81,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="gWA-81-UCM"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
