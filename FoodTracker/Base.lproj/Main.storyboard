@@ -41,6 +41,14 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="7Xt-CF-bgs" secondAttribute="trailing" id="8rg-aR-fmt"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-De-UiW">
+                                <rect key="frame" x="20" y="172.5" width="374" height="199.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gWA-81-UCM" appends="YES" id="ovb-le-dwz"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -53,11 +61,16 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="Va8-iV-Vjx" id="Rea-7V-sld"/>
                         <outlet property="nameTextField" destination="7Xt-CF-bgs" id="nOG-Pc-GjK"/>
+                        <outlet property="photoImageView" destination="tsW-De-UiW" id="qq0-mY-icV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gWA-81-UCM"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="400" height="275"/>
+    </resources>
 </document>
