@@ -40,6 +40,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        guard let targetSize = photoImageView.image?.size else { return }
+        
         dismiss(animated: true, completion:nil)
         
         guard let image = info[.editedImage] as? UIImage else {
@@ -47,8 +49,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             return
         }
         
+        let newImage = image.resizeImage(targetSize, opaque: true)
+        
         //Set image to photoImageView to display the selected image.
-        photoImageView.image = image
+        photoImageView.image = newImage
 
         // print out the image size as a test
         print(image.size)
@@ -70,3 +74,44 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 }
 
+extension UIImage {
+    func resizeImage(_ dimension: CGSize, opaque: Bool, contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImage {
+        var width =  dimension.width
+        var height = dimension.height
+        var newImage: UIImage
+
+        let size = self.size
+        let aspectRatio =  size.width/size.height
+
+        switch contentMode {
+            case .scaleAspectFit:
+                if aspectRatio > 1 {                            // Landscape image
+                    width = dimension.width
+                    height = dimension.height / aspectRatio
+                } else {                                        // Portrait image
+                    height = dimension.height
+                    width = dimension.width * aspectRatio
+                }
+
+        default:
+            fatalError("UIIMage.resizeToFit(): FATAL: Unimplemented ContentMode")
+        }
+
+        if #available(iOS 10.0, *) {
+            let renderFormat = UIGraphicsImageRendererFormat.default()
+            renderFormat.opaque = opaque
+            let renderer = UIGraphicsImageRenderer(size: CGSize(width: width, height: height), format: renderFormat)
+            newImage = renderer.image {
+                (context) in
+                self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), opaque, 0)
+                self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+                newImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        }
+
+        return newImage
+    }
+}
