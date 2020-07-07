@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         photoImageView.image = newImage
 
         // print out the image size as a test
-        print(image.size)
+        print(newImage.size)
     }
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UIButton) {
@@ -87,10 +87,10 @@ extension UIImage {
             case .scaleAspectFit:
                 if aspectRatio > 1 {                            // Landscape image
                     width = dimension.width
-                    height = dimension.height / aspectRatio
+                    height = 275.0
                 } else {                                        // Portrait image
                     height = dimension.height
-                    width = dimension.width * aspectRatio
+                    width = 400.0
                 }
 
         default:
