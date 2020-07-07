@@ -13,6 +13,7 @@
 		9D3A434A24AFAF670016BBE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434824AFAF670016BBE8 /* Main.storyboard */; };
 		9D3A434C24AFAF670016BBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434B24AFAF670016BBE8 /* Assets.xcassets */; };
 		9D3A434F24AFAF670016BBE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434D24AFAF670016BBE8 /* LaunchScreen.storyboard */; };
+		9D7342B824B4017100CDD733 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7342B724B4017100CDD733 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9D3A435024AFAF670016BBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3A435524AFAF670016BBE8 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3A435B24AFAF670016BBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7342B724B4017100CDD733 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				9D3A434224AFAF670016BBE8 /* AppDelegate.swift */,
 				9D3A434424AFAF670016BBE8 /* SceneDelegate.swift */,
 				9D3A434624AFAF670016BBE8 /* ViewController.swift */,
+				9D7342B724B4017100CDD733 /* RatingControl.swift */,
 				9D3A434824AFAF670016BBE8 /* Main.storyboard */,
 				9D3A434B24AFAF670016BBE8 /* Assets.xcassets */,
 				9D3A434D24AFAF670016BBE8 /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7342B824B4017100CDD733 /* RatingControl.swift in Sources */,
 				9D3A434724AFAF670016BBE8 /* ViewController.swift in Sources */,
 				9D3A434324AFAF670016BBE8 /* AppDelegate.swift in Sources */,
 				9D3A434524AFAF670016BBE8 /* SceneDelegate.swift in Sources */,
