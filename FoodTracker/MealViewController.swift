@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  FoodTracker
 //
 //  Created by Anthony Hopkins on 2020-07-03.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     
@@ -33,7 +32,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mealNameLabel.text = textField.text
+        //Gone since we removed the meal name label
+        //mealNameLabel.text = textField.text
+        
+        //New implementation soon
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -69,9 +71,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePicker.delegate = self
         present(imagePicker, animated: true)
     }
+    
+    //Gone since we removed the label and button
+    /*
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
     }
+ */
 }
 
 //Function to scale the images to force them to fit into the image view
