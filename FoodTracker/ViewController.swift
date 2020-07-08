@@ -74,6 +74,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 }
 
+//Function to scale the images to force them to fit into the image view
 extension UIImage {
     func resizeImage(_ dimension: CGSize, opaque: Bool, contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImage {
         var width =  dimension.width
