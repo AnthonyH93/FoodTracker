@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="244.92753623188409" y="134.59821428571428"/>
         </scene>
-        <!--Meal View Controller-->
+        <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,14 +86,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zQT-fS-gio">
-                                <rect key="frame" x="-63" y="130" width="540" height="578"/>
+                                <rect key="frame" x="-63" y="130" width="540" height="438"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-De-UiW">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="400"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="R73-BI-nAT"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61n-54-95W">
-                                        <rect key="frame" x="203.5" y="548" width="133" height="30"/>
+                                        <rect key="frame" x="203.5" y="408" width="133" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hMb-Nt-BOC"/>
                                         </constraints>
@@ -105,7 +108,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MuR-yP-NWf" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="81" y="715.5" width="252" height="44"/>
+                                <rect key="frame" x="81" y="575.5" width="252" height="44"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                         <size key="value" width="44" height="44"/>
@@ -128,14 +131,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AuG-5p-M0M"/>
+                    <navigationItem key="navigationItem" title="New Meal" id="AuG-5p-M0M">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sLz-T3-oxz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ey1-Sd-MNU">
+                            <connections>
+                                <segue destination="xys-Wb-jbs" kind="unwind" unwindAction="unwindToMealListWithSender:" id="PnN-Ox-sdM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="7Xt-CF-bgs" id="nOG-Pc-GjK"/>
                         <outlet property="photoImageView" destination="tsW-De-UiW" id="qq0-mY-icV"/>
                         <outlet property="ratingControl" destination="MuR-yP-NWf" id="1Cl-Ak-RYn"/>
+                        <outlet property="saveButton" destination="Ey1-Sd-MNU" id="bBe-8l-SgI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="xys-Wb-jbs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="137.94642857142856"/>
         </scene>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -14,6 +15,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +29,19 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
         //The self refers to the ViewController class because it's referenced inside the scope of the ViewController class definition.
+        
+        //Enable the save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
 
     }
     
     //MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //Disable the save button while editing
+        saveButton.isEnabled = false
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //Hide the keyboard.
         textField.resignFirstResponder()
@@ -35,7 +52,8 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //Gone since we removed the meal name label
         //mealNameLabel.text = textField.text
         
-        //New implementation soon
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -59,6 +77,35 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // print out the image size as a test
         print(newImage.size)
     }
+    
+    //MARK: Navigation
+    
+    //This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //Good habit to call this when we override the prepare(for:sender)
+        super.prepare(for: segue, sender: sender)
+        
+        //Configure the destination view controller only when the save button is pressed.
+        //The .debug type means it only outputs when debugging, not in a shipped app environment
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        //the ?? "" singals a default value in the case that name is nil
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        var rating = ratingControl.rating
+        
+        //Issue where rating is 10 higher than it should be
+        if (rating > 10){
+            rating-=10
+        }
+        //Set the meal to be passed to MealTableViewController after the unwind segue.
+        meal = Meal(name: name, photo: photo, rating: rating)
+    }
+    
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UIButton) {
         //Hide the keyboard in case user taps while typing in the textbox.
@@ -77,7 +124,20 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
     }
- */
+     */
+    
+    //MARK: Private Methods
+
+    private func updateSaveButtonState() {
+        //Disable the save button if the text field is empty
+        let text = nameTextField.text ?? ""
+        if (text.isEmpty){
+            saveButton.isEnabled = false
+        }
+        else {
+            saveButton.isEnabled = true
+        }
+    }
 }
 
 //Function to scale the images to force them to fit into the image view

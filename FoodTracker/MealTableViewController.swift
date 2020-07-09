@@ -122,4 +122,17 @@ class MealTableViewController: UITableViewController {
         //Add the meals to the array
         meals += [meal1, meal2, meal3]
     }
+    
+    //MARK: Actions
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
+            //Add a new meal.
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            meals.append(meal)
+            print("in if case")
+            //automatic makes the best animation possible occur for new row in table view being added
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 }
