@@ -115,8 +115,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         nameTextField.resignFirstResponder()
         
         let imagePicker = UIImagePickerController()
-        //For a real device we could use .camera
+        
+        //For simulator we have to use the photo library, but for real device allow camera to be used
+        #if targetEnvironment(simulator)
         imagePicker.sourceType = .photoLibrary
+        #else
+        imagePicker.sourceType = .camera
+        #endif
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         present(imagePicker, animated: true)
