@@ -49,9 +49,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //Gone since we removed the meal name label
-        //mealNameLabel.text = textField.text
-        
         updateSaveButtonState()
         navigationItem.title = textField.text
     }
@@ -126,13 +123,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePicker.delegate = self
         present(imagePicker, animated: true)
     }
-    
-    //Gone since we removed the label and button
-    /*
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "Default Text"
-    }
-     */
     
     //MARK: Private Methods
 
