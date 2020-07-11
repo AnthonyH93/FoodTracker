@@ -18,6 +18,10 @@
 		9D3A434C24AFAF670016BBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434B24AFAF670016BBE8 /* Assets.xcassets */; };
 		9D3A434F24AFAF670016BBE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A434D24AFAF670016BBE8 /* LaunchScreen.storyboard */; };
 		9D7342B824B4017100CDD733 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7342B724B4017100CDD733 /* RatingControl.swift */; };
+		9D8F04D224BA88C2005F2329 /* MainScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F04D124BA88C2005F2329 /* MainScreen.png */; };
+		9D8F04D424BA88CE005F2329 /* EditingTableEntries.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F04D324BA88CE005F2329 /* EditingTableEntries.png */; };
+		9D8F04D624BA88D8005F2329 /* EditingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F04D524BA88D8005F2329 /* EditingScreen.png */; };
+		9D8F04D824BA88E4005F2329 /* NewMealScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8F04D724BA88E4005F2329 /* NewMealScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		9D3A435524AFAF670016BBE8 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3A435B24AFAF670016BBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7342B724B4017100CDD733 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		9D8F04D124BA88C2005F2329 /* MainScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainScreen.png; path = ../../../../../../Screenshots/FoodTracker/MainScreen.png; sourceTree = "<group>"; };
+		9D8F04D324BA88CE005F2329 /* EditingTableEntries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EditingTableEntries.png; path = ../../../../../../Screenshots/FoodTracker/EditingTableEntries.png; sourceTree = "<group>"; };
+		9D8F04D524BA88D8005F2329 /* EditingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EditingScreen.png; path = ../../../../../../Screenshots/FoodTracker/EditingScreen.png; sourceTree = "<group>"; };
+		9D8F04D724BA88E4005F2329 /* NewMealScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewMealScreen.png; path = ../../../../../../Screenshots/FoodTracker/NewMealScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 		9D3A433624AFAF660016BBE8 = {
 			isa = PBXGroup;
 			children = (
+				9D8F04CF24BA888D005F2329 /* Documents */,
 				9D3A434124AFAF660016BBE8 /* FoodTracker */,
 				9D3A435824AFAF670016BBE8 /* FoodTrackerTests */,
 				9D3A434024AFAF660016BBE8 /* Products */,
@@ -109,6 +118,25 @@
 				9D1E901324B56AD000416F88 /* FoodTrackerTests.swift */,
 			);
 			path = FoodTrackerTests;
+			sourceTree = "<group>";
+		};
+		9D8F04CF24BA888D005F2329 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				9D8F04D024BA88A3005F2329 /* Images */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		9D8F04D024BA88A3005F2329 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9D8F04D124BA88C2005F2329 /* MainScreen.png */,
+				9D8F04D724BA88E4005F2329 /* NewMealScreen.png */,
+				9D8F04D324BA88CE005F2329 /* EditingTableEntries.png */,
+				9D8F04D524BA88D8005F2329 /* EditingScreen.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +221,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8F04D424BA88CE005F2329 /* EditingTableEntries.png in Resources */,
 				9D3A434F24AFAF670016BBE8 /* LaunchScreen.storyboard in Resources */,
+				9D8F04D624BA88D8005F2329 /* EditingScreen.png in Resources */,
+				9D8F04D824BA88E4005F2329 /* NewMealScreen.png in Resources */,
 				9D3A434C24AFAF670016BBE8 /* Assets.xcassets in Resources */,
+				9D8F04D224BA88C2005F2329 /* MainScreen.png in Resources */,
 				9D3A434A24AFAF670016BBE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
