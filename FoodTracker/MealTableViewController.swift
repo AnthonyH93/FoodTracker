@@ -16,12 +16,9 @@ class MealTableViewController: UITableViewController {
     var meals = [Meal]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //Use the edit button item provided by the table view controller
+        navigationItem.leftBarButtonItem = editButtonItem
         
         //Load the sample data
         loadSampleMeals()
