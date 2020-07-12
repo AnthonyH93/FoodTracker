@@ -1,5 +1,7 @@
 # FoodTracker
 
+## About
+
 First iOS app built in Xcode with storyboards utilizing MVC architecture.
 
 Built from the following tutorial for practice:
@@ -9,7 +11,9 @@ This tutorial focused on all the major parts of a standard iOS app; basic UI, co
 
 Some enhancements were made to the tutorial, these include; automatic scaling for meal images to support multiple device sizes, a button to add a new image to a meal and camera support for adding an image on a real device.
 
-Below are some device screenshots of some of the app pages and main functionalities.
+## Device Screenshots
+
+Below are some screenshots showing the main fucntionalities of the FoodTracker app
 
 Main Screen Table View | Edit Table | Add a New Meal | View a Meal/Edit a Meal
 ---------------------- | ---------- | -------------- | -----------------------
